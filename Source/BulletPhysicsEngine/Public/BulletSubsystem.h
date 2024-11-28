@@ -64,7 +64,7 @@ UCLASS()
 			bool DebugEnabled=true;
 
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Bullet Physics|Objects")
-			FVector Gravity=FVector(0, 0, -9.8);
+			FVector Gravity=FVector(0, 0, -9.81);
 
 		// Input the fixed frame rate to calculate physics
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Bullet Physics|Objects")
