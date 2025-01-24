@@ -70,7 +70,7 @@ UCLASS()
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Bullet Physics|Objects")
 			float PhysicsRefreshRate =60.0f;
 
-		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Bullet Physics|Objects")
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bullet Physics|Objects")
 			bool AutomaticTick = false;
 
 		// This is independent of the frame rate in UE
