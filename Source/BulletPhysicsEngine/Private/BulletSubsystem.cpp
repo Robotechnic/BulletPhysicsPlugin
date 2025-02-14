@@ -549,6 +549,29 @@ void UBulletSubsystem::GetPhysicsState(int ID, FTransform& transforms, FVector& 
 	}
 }
 
+void UBulletSubsystem::SetLinearFactor(int ID, const FVector &factor) 
+{
+	if (BtRigidBodies.Num()<=ID) {
+		UE_LOG(LogTemp, Warning, TEXT("No rigid "));
+		return;
+	}
+	
+	if (BtRigidBodies[ID]) {
+		BtRigidBodies[ID]->setLinearFactor(btVector3(factor.X, factor.Y, factor.Z));
+	}
+}
+	
+void UBulletSubsystem::SetAngularFactor(int ID, const FVector &factor) 
+{
+	if (BtRigidBodies.Num()<=ID) {
+		UE_LOG(LogTemp, Warning, TEXT("No rigid "));
+		return;
+	}
+	if (BtRigidBodies[ID]) {
+		BtRigidBodies[ID]->setAngularFactor(btVector3(factor.X, factor.Y, factor.Z));
+	}
+}
+
 btCollisionObject* UBulletSubsystem::GetStaticObject(int ID)
 {
 	return BtStaticObjects[ID];

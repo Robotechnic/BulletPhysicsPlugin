@@ -58,6 +58,12 @@ UCLASS()
 			void GetPhysicsState(int ID, FTransform& transforms, FVector& Velocity, FVector& AngularVelocity, FVector& Force);
 
 		UFUNCTION(BlueprintCallable, Category = "Bullet Physics|Objects")
+			void SetLinearFactor(int ID, const FVector &factor);
+		
+		UFUNCTION(BlueprintCallable, Category = "Bullet Physics|Objects")
+			void SetAngularFactor(int ID, const FVector &factor);
+
+		UFUNCTION(BlueprintCallable, Category = "Bullet Physics|Objects")
 			void ResetSim();
 
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Bullet Physics|Objects")
