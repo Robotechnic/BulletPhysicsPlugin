@@ -572,6 +572,17 @@ void UBulletSubsystem::SetAngularFactor(int ID, const FVector &factor)
 	}
 }
 
+void UBulletSubsystem::SetDamping(int ID, float linearDamping, float angularDamping)
+{
+	if (BtRigidBodies.Num()<=ID) {
+		UE_LOG(LogTemp, Warning, TEXT("No rigid "));
+		return;
+	}
+	if (BtRigidBodies[ID]) {
+		BtRigidBodies[ID]->setDamping(linearDamping, angularDamping);
+	}
+}
+
 btCollisionObject* UBulletSubsystem::GetStaticObject(int ID)
 {
 	return BtStaticObjects[ID];

@@ -64,6 +64,9 @@ UCLASS()
 			void SetAngularFactor(int ID, const FVector &factor);
 
 		UFUNCTION(BlueprintCallable, Category = "Bullet Physics|Objects")
+			void SetDamping(int ID, float linearDamping, float angularDamping);
+
+		UFUNCTION(BlueprintCallable, Category = "Bullet Physics|Objects")
 			void ResetSim();
 
 		UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Bullet Physics|Objects")
