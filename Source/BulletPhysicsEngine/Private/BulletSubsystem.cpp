@@ -410,7 +410,7 @@ btCollisionShape* UBulletSubsystem::GetConvexHullCollisionShape(UBodySetup* Body
 	auto C = new btConvexHullShape();
 	for (auto&& P : Elem.VertexData)
 	{
-		C->addPoint(BulletHelpers::ToBtPos(P, FVector::ZeroVector));
+		C->addPoint(BulletHelpers::ToBtPos(P * Scale, FVector::ZeroVector));
 	}
 	// Very important! Otherwise there's a gap between 
 	C->setMargin(0);
